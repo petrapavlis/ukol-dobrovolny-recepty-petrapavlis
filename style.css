@@ -1,0 +1,271 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html {
+  box-sizing: border-box;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+/* -------------------------------------------------- */
+
+/*
+  pouzivame mobile first pristup
+  tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni (telefony)
+  s pribyvajici sirkou pridavame media query pro...
+  tablety:
+  @media (min-width: 480px) {
+  }
+  notebook/pc:
+  @media (min-width: 860px) {
+  }
+  */
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.paticka {
+  text-align: center;
+  font-size: 14px;
+  color: silver;
+}
+
+.paticka a {
+  color: silver;
+}
+
+/* ------------------------------- */
+/* ----- DOLE BUDE TVOJE CSS ----- */
+/* ------------------------------- */
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,800|Source+Sans+Pro&display=swap&subset=latin-ext");
+
+/* snazila jsem se u pozadi receptu nejak udelat spolecne prvky najednou - jako u vsech nastavit stejne parametry pozadi a zarovnani a pak uz jenom jednotlive dohazet rozdilne vysky a obrazky samotne, ale porad mi to nefungovalo, tak jsem nakonec udelala kazdy zvlast se vsim komplet */
+
+.hlavni-recept {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(82, 52, 52, 0.2)
+    ),
+    url(images/salat.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  min-height: 200px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: white solid 2px;
+}
+
+.recept2 {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(82, 52, 52, 0.2)
+    ),
+    url(images/chlebicek.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.recept3 {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(82, 52, 52, 0.2)
+    ),
+    url(images/tacos.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.recept4 {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(82, 52, 52, 0.2)
+    ),
+    url(images/cizrna.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.recept5 {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(82, 52, 52, 0.3)
+    ),
+    url(images/burger.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.recept2,
+.recept3,
+.recept4,
+.recept5 {
+  min-height: 90px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: white solid 2px;
+}
+
+h2,
+.kategorie,
+.komentare {
+  color: white;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+h2 {
+  font-family: "Raleway";
+  font-weight: 800;
+  padding-left: 10px;
+}
+
+.hlavni-recept h2 {
+  font-size: 28px;
+}
+
+.dalsi-recepty h2 {
+  font-size: 18px;
+}
+
+.kategorie,
+.komentare {
+  font-weight: 400;
+  font-size: 14px;
+  padding: 10px;
+}
+
+/* flex settings */
+
+.hlavni-recept {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dalsi-recepty > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.popisky {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* media settings tablet */
+
+@media (min-width: 480px) {
+  .hlavni-recept {
+    min-height: 250px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: white solid 2px;
+  }
+
+  .recept2,
+  .recept3,
+  .recept4,
+  .recept5 {
+    min-height: 150px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: white solid 2px;
+  }
+
+  .hlavni-recept h2 {
+    font-size: 36px;
+  }
+
+  .dalsi-recepty h2 {
+    font-size: 22px;
+  }
+
+  .kategorie,
+  .komentare {
+    font-size: 16px;
+  }
+
+  /* flex settings tablet */
+
+  .dalsi-recepty {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .recept2,
+  .recept3,
+  .recept4,
+  .recept5 {
+    width: 50%;
+  }
+
+  .recept2,
+  .recept4 {
+    border-right: white solid 2px;
+  }
+}
+
+/* media settings pc */
+
+@media (min-width: 860px) {
+  .hlavni-recept {
+    min-height: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: white solid 2px;
+  }
+
+  .recept2,
+  .recept3,
+  .recept4,
+  .recept5 {
+    min-height: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: white solid 2px;
+  }
+
+  .hlavni-recept h2 {
+    font-size: 48px;
+  }
+
+  .dalsi-recepty h2 {
+    font-size: 28px;
+  }
+
+  .kategorie,
+  .komentare {
+    font-size: 20px;
+  }
+
+  /* flex settings pc */
+
+  .recepty {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hlavni-recept {
+    border-right: white solid 2px;
+  }
+}
